@@ -36,17 +36,17 @@ def desenhar_pontuacao(pontuacao):
     texto = fonte.render(f'Pontos: {pontuacao}', True, vermelha)
     tela.blit(texto, [1,1])
 
-def selecionar_velocidade(tecla):
-    if tecla == pygame.K_DOWN:
+def selecionar_velocidade(tecla, velocidade_x, velocidade_y):
+    if tecla == pygame.K_DOWN and velocidade_y != -tamanho_quadrado:
         velocidade_x = 0
         velocidade_y = tamanho_quadrado
-    elif tecla == pygame.K_UP:
+    elif tecla == pygame.K_UP and velocidade_y != tamanho_quadrado:
         velocidade_x = 0
         velocidade_y = -tamanho_quadrado
-    elif tecla == pygame.K_RIGHT:
+    elif tecla == pygame.K_RIGHT and velocidade_x != -tamanho_quadrado:
         velocidade_x = tamanho_quadrado
         velocidade_y = 0
-    elif tecla == pygame.K_LEFT:
+    elif tecla == pygame.K_LEFT and velocidade_x != tamanho_quadrado:
         velocidade_x = -tamanho_quadrado
         velocidade_y = 0
     return velocidade_x, velocidade_y
@@ -94,7 +94,7 @@ def rodar_jogo():
 
     while True:
         tela.fill(preta)
-
+        
         if recomecar:
             tamanho_cobra = 1
             pixels = []
@@ -110,11 +110,7 @@ def rodar_jogo():
                     pygame.quit()
                     sys.exit()
                 elif evento.type == pygame.KEYDOWN:
-                    velocidade_x, velocidade_y = selecionar_velocidade(evento.key)
-                elif evento.type == pygame.KEYDOWN:
-                    if evento.key == pygame.K_ESCAPE:
-                        pygame.quit()
-                        sys.exit()             
+                    velocidade_x, velocidade_y = selecionar_velocidade(evento.key, velocidade_x, velocidade_y)
 
         #atualizar a posicao da cobra
         if x >= largura or x < 0 or y >= altura or y < 0:
