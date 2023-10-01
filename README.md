@@ -1,3 +1,7 @@
-# SnakeGamePy
+# Pygame-Snake
+Simples jogo de Snake feito com PyGame.
 
-Jogo snake feito em python baseado no vídeo do Hashtag Programação
+Para rodar o projeto:
+<ul>
+<li>Execute <code>pip install pygame</code></li>
+<li>Rode o jogo com <code>python main.py</code></li>
