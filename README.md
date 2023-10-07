@@ -7,6 +7,6 @@ Para rodar o projeto:
 <li>Rode o jogo com <code>python main.py</code></li>
 
 ### :camera: Imagem do projeto
-![Imagem do projeto em execução](https://i.imgur.com/urc4BcB.png)
+![Imagem do projeto em execução](https://i.imgur.com/yO52hJQ.png)
 
 **Desenvolvedor:** Emerson Jesus
